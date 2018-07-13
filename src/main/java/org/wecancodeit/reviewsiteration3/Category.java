@@ -1,4 +1,5 @@
 package org.wecancodeit.reviewsiteration3;
+
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ public class Category {
 	private Long id;
 	private String categoryName;
 
-	@OneToMany(mappedBy="category")
+	@OneToMany(mappedBy = "category")
 	private Collection<Review> reviews;
 
 	public Category(String categoryName) {

@@ -10,13 +10,18 @@
 	<link rel="stylesheet" type="text/css" media="all" href="/src/css/style.css" th:href="@{/src/css/style.css}"/>
 </head>
 <body>
-	<div class="container">
+	<main>
 		<header>
 			<h1 class="pageHeadline" th:text="${review.reviewTitle}"></h1>
-				<h2 class="reviewScore" th:text="${review.score} + ' stars out of 5'"></h2>
-				<a class="reviewCategoryHeading" th:each="category : ${review.category}" th:href="@{/categories/} + ${category.id}">
-		        	<span th:text="${review.category}"></span>
-		        </a>
+			<h2 class="reviewScore" th:text="${review.score} + ' stars out of 5'"></h2>
+			<a class="reviewCategoryHeading" th:each="category : ${review.category}" th:href="@{/categories/} + ${category.id}">
+	        	<span th:text="${review.category}"></span>
+			</a>
+			<p class="reviewTags" th:each="tag : ${tags}">
+				<a th:href="@{/tags/} + ${tag.id}">
+					<span th:text="${tag.name}"></span>
+				</a>
+			</p>
 		</header>
 		<main>
 			<img class="reviewImage" th:src="${review.imageUrl}" />
@@ -26,7 +31,7 @@
 			<p><a class="goHomeLink" th:href="@{/reviews}">Return to home page</a></p>
 			<p class="copyrightInfo">Copyright 2018 Andy Padula</p>
 		</footer>
-	</div>	
+	</main>	
 	<script th:src="@{/src/js/app.js}"></script>
 </body>
 </html>

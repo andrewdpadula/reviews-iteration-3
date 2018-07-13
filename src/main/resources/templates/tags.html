@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tags</title>
+</head>
+<body>
+    <header>
+        <h1>All Tags</h1>
+    </header>
+    <main>
+        <ul>
+            <li th:each="tag : ${tags}">
+                <a th:href="@{/tags/} + ${tag.id}">
+                    <span th:text="${tag.name}">
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <a class="goHomeLink" th:href="@{/reviews}">Return to home page</a>
+		<p class="copyrightInfo">Copyright 2018 Andy Padula</p>
+    </footer>
+    
+</body>
+</html>

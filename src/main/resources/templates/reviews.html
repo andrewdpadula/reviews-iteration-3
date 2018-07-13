@@ -25,8 +25,17 @@
 	   		</ul>
 	   	</main>
 	    <footer>
-	    	<p><a class="categoriesPageLink" th:href="@{/categories}">Browse reviews by category</a></p>
-			<p class="copyrightInfo">Copyright 2018 Andy Padula</p>
+			<ul>
+				<li>
+					<a class="categoriesPageLink" th:href="@{/categories}">Browse by category</a>
+				</li>
+				<li>
+					<a class="tagsPageLink" th:href="@{/tags}">Browse by tag</a>
+				</li>
+				<li>
+					<p class="copyrightInfo">Copyright 2018 Andy Padula</p>
+				</li>
+			</ul>
 		</footer> 
 	</div>	
 	<script th:src="@{/src/js/app.js}"></script> 		
