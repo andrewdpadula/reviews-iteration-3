@@ -1,0 +1,13 @@
+html {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 22px;
+}
+* {
+	background-color: #e6fff9;
+}
+.reviewCategoryHeading {
+	font-style: italic;
+}
+.copyrightInfo {
+	font-size: 14px;
+}

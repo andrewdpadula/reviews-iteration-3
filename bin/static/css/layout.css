@@ -1,0 +1,49 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.pageHeadline {
+	text-align: center;
+	border: 2px solid purple;
+	background-color: #555555;
+	color: #efefef;
+}
+.reviewsList {
+	border: 1px solid purple;
+	padding: 3rem;
+}
+.categoriesList {
+	border: 1px solid purple;
+	padding: 3rem;
+}
+.reviewScore {
+	border: 2px solid purple;
+	text-decoration: underline;
+	background-color: #555555;
+	color: #efefef;
+	text-align: center;
+}
+.container {
+	padding: 5rem;
+}
+.reviewImage {
+	float: right;
+	position: relative;
+}
+.reviewsListedByCategory {
+	padding-left: 3rem;
+	border: 1px solid purple;
+}
+.reviewContent {
+	padding: 1rem 1rem 1rem 1rem;
+	margin-right: 10px;
+}
+.categoriesPageLink {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.goHomeLink {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
