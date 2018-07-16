@@ -18,6 +18,9 @@ public class ReviewController {
 
 	@Autowired
 	TagRepository tagRepo;
+	
+	@Autowired
+	CommentRepository commentRepo;
 
 	@RequestMapping("/")
 	public String home() {
@@ -61,8 +64,9 @@ public class ReviewController {
 	}
 	
 	@RequestMapping(value = "/reviews/{id}", method = RequestMethod.POST)
-	public String addComment(String commenterName, String commentContent, String reviewTitle) {
-		return "redirect:/reviews/{id}";
+	public String addComment(@PathVariable(name = "id") Long id, String commenterName, String commentContent, Review review) {
+		commentRepo.save(new Comment(commenterName, commentContent, reviewRepo.findOne(id)));
+		return "redirect:/reviews/" + id;
 	}
 
 	
