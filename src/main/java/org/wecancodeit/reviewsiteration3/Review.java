@@ -3,13 +3,13 @@ package org.wecancodeit.reviewsiteration3;
 import java.util.Arrays;
 import java.util.Collection;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Review {
@@ -26,16 +26,17 @@ public class Review {
 	@ManyToOne
 	private Category category;
 
-	@ManyToMany 
+	@ManyToMany
 	private Collection<Tag> tags;
 
-	@Embedded
+	@OneToMany(mappedBy = "review")
 	private Collection<Comment> comments;
 
 	public Review() {
 	}
 
-	public Review(String reviewTitle, String imageUrl, int score, Category category, String reviewContent, Tag ...tags) {
+	public Review(String reviewTitle, String imageUrl, int score, Category category, String reviewContent,
+			Tag... tags) {
 		this.reviewTitle = reviewTitle;
 		this.imageUrl = imageUrl;
 		this.score = score;
@@ -66,6 +67,14 @@ public class Review {
 
 	public String getReviewContent() {
 		return reviewContent;
+	}
+
+	public Collection<Tag> getTags() {
+		return tags;
+	}
+
+	public Collection<Comment> getComments() {
+		return comments;
 	}
 
 	@Override

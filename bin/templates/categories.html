@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 	<title>Categories</title>
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet"/>
-	<link rel="stylesheet" type="text/css" media="all" href="/src/css/layout.css" th:href="@{/src/css/layout.css}"/>
-	<link rel="stylesheet" type="text/css" media="all" href="/src/css/style.css" th:href="@{/src/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/layout.css" th:href="@{/css/layout.css}"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 	<div class="container">
@@ -24,9 +24,18 @@
 	        	</li>
 	   		</ul>
 	   	</main>
-	    <footer>
-			<p><a class="goHomeLink" th:href="@{/reviews}">Return to home page</a></p>
-			<p class="copyrightInfo">Copyright 2018 Andy Padula</p>
+		<footer>
+			<ul>
+				<li>
+					<a class="goHomeLink" th:href="@{/reviews}">Return to home page</a>
+				</li>
+				<li>
+					<a class="tagsPageLink" th:href="@{/tags}">Browse by tag</a>
+				</li>
+				<li>
+					<p class="copyrightInfo">Copyright 2018 Andy Padula</p>
+				</li>
+			</ul>
 		</footer>
 	</div>	
 	<script th:src="@{/src/js/app.js}"></script>

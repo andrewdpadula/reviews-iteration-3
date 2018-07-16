@@ -17,6 +17,10 @@
 	border: 1px solid purple;
 	padding: 3rem;
 }
+.tagsList {
+	border: 1px solid purple;
+	padding: 3rem;	
+}
 .reviewScore {
 	border: 2px solid purple;
 	text-decoration: underline;

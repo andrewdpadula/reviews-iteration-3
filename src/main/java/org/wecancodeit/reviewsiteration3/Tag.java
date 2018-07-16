@@ -18,20 +18,20 @@ public class Tag {
 	@ManyToMany(mappedBy = "tags")
 	private Collection<Review> reviews;
 
-	public Long getId() {
-		return id;
-	}
-
-	public Collection<Review> getReviews() {
-		return reviews;
-	}
 
 	public Tag() {
 	}
 
-	public Tag(String name, Review... reviews) {
+	public Tag(String name) {
 		this.name = name;
-		this.reviews = Arrays.asList(reviews);
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public Collection<Review> getReviews() {
+		return reviews;
 	}
 
 	public String getName() {

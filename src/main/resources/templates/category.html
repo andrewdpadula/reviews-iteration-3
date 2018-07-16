@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 	<title th:text="'Category: ' + ${category.categoryName}"></title>
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet"/>
-	<link rel="stylesheet" type="text/css" media="all" href="/src/css/layout.css" th:href="@{/src/css/layout.css}"/>
-	<link rel="stylesheet" type="text/css" media="all" href="/src/css/style.css" th:href="@{/src/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/layout.css" th:href="@{/css/layout.css}"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 	<div class="container">
@@ -17,15 +17,28 @@
 		<main>
 			<h2>Reviews in this category:</h2>
 			<ul class="reviewsListedByCategory">
-				<li>
-					<a th:each="review : ${category.reviews}" th:href="@{/reviews/} + ${review.id}" th:text="${review.reviewTitle}"></a>
+				<li th:each="review : ${category.reviews}">
+					<a th:href="@{/reviews/} + ${review.id}">
+						<span th:text="${review.reviewTitle}"></span>
+					</a>
 				</li>
 			</ul>
 		</main>
 	    <footer>
-	    	<p><a class="categoriesPageLink" th:href="@{/categories}">Return to Categories list</a></p>
-			<p><a class="goHomeLink" th:href="@{/reviews}">Return to home page</a></p>
-			<p class="copyrightInfo">Copyright 2018 Andy Padula</p>
+			<ul>
+				<li>
+					<a class="goHomeLink" th:href="@{/reviews}">Return to home page</a>
+				</li>
+				<li>
+					<a class="categoriesPageLink" th:href="@{/categories}">Browse by category</a>
+				</li>
+				<li>
+					<a class="tagsPageLink" th:href="@{/tags}">Browse by tag</a>
+				</li>
+				<li>
+					<p class="copyrightInfo">Copyright 2018 Andy Padula</p>
+				</li>
+			</ul>
 		</footer>	
 	</div>
 	<script th:src="@{/src/js/app.js}"></script>

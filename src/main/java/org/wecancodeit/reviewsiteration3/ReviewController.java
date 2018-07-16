@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ReviewController {
@@ -58,4 +59,11 @@ public class ReviewController {
 		model.addAttribute("tag", tagRepo.findOne(id));
 		return "tag";
 	}
+	
+	@RequestMapping(value = "/reviews/{id}", method = RequestMethod.POST)
+	public String addComment(String commenterName, String commentContent, String reviewTitle) {
+		return "redirect:/reviews/{id}";
+	}
+
+	
 }

@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 	<title>Andy's Reviews</title>
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet"/>
-	<link rel="stylesheet" type="text/css" media="all" href="/src/css/layout.css" th:href="@{/src/css/layout.css}"/>
-	<link rel="stylesheet" type="text/css" media="all" href="/src/css/style.css" th:href="@{/src/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/layout.css" th:href="@{/css/layout.css}"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 	<div class="container">
 		<header>
-			<h1 class="pageHeadline">All Reviews</h1>
+			<h1 class="pageHeadline">Shakespeare Reviews</h1>
 			<!-- nav menu -->
 		</header>
 		<main>
@@ -25,8 +25,17 @@
 	   		</ul>
 	   	</main>
 	    <footer>
-	    	<p><a class="categoriesPageLink" th:href="@{/categories}">Browse reviews by category</a></p>
-			<p class="copyrightInfo">Copyright 2018 Andy Padula</p>
+			<ul>
+				<li>
+					<a class="categoriesPageLink" th:href="@{/categories}">Browse by category</a>
+				</li>
+				<li>
+					<a class="tagsPageLink" th:href="@{/tags}">Browse by tag</a>
+				</li>
+				<li>
+					<p class="copyrightInfo">Copyright 2018 Andy Padula</p>
+				</li>
+			</ul>
 		</footer> 
 	</div>	
 	<script th:src="@{/src/js/app.js}"></script> 		

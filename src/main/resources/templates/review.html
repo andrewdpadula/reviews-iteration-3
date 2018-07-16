@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 	<title th:text="'Review of: ' + ${review.reviewTitle}"></title>
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet"/>
-	<link rel="stylesheet" type="text/css" media="all" href="/src/css/layout.css" th:href="@{/src/css/layout.css}"/>
-	<link rel="stylesheet" type="text/css" media="all" href="/src/css/style.css" th:href="@{/src/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/layout.css" th:href="@{/css/layout.css}"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 	<main>
@@ -17,15 +17,22 @@
 			<a class="reviewCategoryHeading" th:each="category : ${review.category}" th:href="@{/categories/} + ${category.id}">
 	        	<span th:text="${review.category}"></span>
 			</a>
-			<p class="reviewTags" th:each="tag : ${tags}">
-				<a th:href="@{/tags/} + ${tag.id}">
-					<span th:text="${tag.name}"></span>
-				</a>
-			</p>
+			<ul class="reviewTags">Tags: 
+				<li th:each="tag : ${review.tags}">
+					<a th:href="@{/tags/} + ${tag.id}" th:text="${tag.name}">
+					</a>
+					<button class="delete">Delete</button>
+				</li>	
+			</ul>
 		</header>
 		<main>
 			<img class="reviewImage" th:src="${review.imageUrl}" />
-	    	<p class="reviewContent" th:text="${review.reviewContent}"></p>
+			<p class="reviewContent" th:text="${review.reviewContent}"></p>
+			<form th:action="@{/reviews/} + ${review.id}" method="POST">
+				<label>Your name: <input type="text" name="commenterName" /></label>
+				<label>Comment: <input type="text" name="commentContent" /></label>
+				<input type="submit" value="Submit" />
+			</form>
 	    </main>
 	    <footer>
 			<ul>

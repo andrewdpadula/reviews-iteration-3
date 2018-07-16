@@ -5,24 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title th:text="'Tag: ' + ${tag.name}"></title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/layout.css" th:href="@{/css/layout.css}"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" th:href="@{/css/style.css}"/>
 </head>
 <body>
-    <header>
-        <h1 th:text="${tag.name}"></h1>
-    </header>
-    <main>
-        <ul>
-            <li th:each="review : ${tag.reviews}">
-                <a th:href="@{/reviews/} + ${review.id}">
-                    <span th:text="${review.reviewTitle}">
-                    </span>
-                </a>
-            </li>
-        </ul>
-    </main>
-    <footer>
-        <a class="goHomeLink" th:href="@{/reviews}">Return to home page</a>
-        <p class="copyrightInfo">Copyright 2018 Andy Padula</p>
-    </footer>
+    <div class="container">
+        <header>
+            <h1 th:text="${tag.name}"></h1>
+        </header>
+        <main>
+            <ul class="tagsList">
+                <li th:each="review : ${tag.reviews}">
+                    <a th:href="@{/reviews/} + ${review.id}">
+                        <span th:text="${review.reviewTitle}">
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <br />
+            <ul>
+                <li>
+                    <a class="goHomeLink" th:href="@{/reviews}">Return to home page</a>
+                </li>
+                <li>
+                    <a class="categoriesPageLink" th:href="@{/categories}">Browse by category</a>
+                </li>
+                <li>
+                    <a class="tagsPageLink" th:href="@{/tags}">Browse by tag</a>
+                </li>
+                <li>
+                    <p class="copyrightInfo">Copyright 2018 Andy Padula</p>
+                </li>
+            </ul>
+        </footer>
+    </div>
 </body>
 </html>
